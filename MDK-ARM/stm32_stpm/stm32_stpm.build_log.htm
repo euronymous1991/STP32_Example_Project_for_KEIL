@@ -1,0 +1,148 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: v v, v, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keilis_V537\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.7.0
+Dialog DLL:      TCM.DLL V1.56.1.0
+ 
+<h2>Project:</h2>
+E:\GitHub\Projects\Energy_Meter_STPM32_EMTY_KEIL\STSW-STPM002\MDK-ARM\stm32_stpm.uvprojx
+Project File Date:  10/17/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keilis_V537\ARM\ARMCLANG\Bin'
+Rebuild target 'stm32_stpm'
+assembling startup_stm32f103xe.s...
+compiling stm32f1xx_it.c...
+compiling main.c...
+compiling stm32f1xx_hal_msp.c...
+compiling system_stm32f1xx.c...
+compiling metrology.c...
+../Metrology/tasks/src/metroTask.c(93): warning: braces around scalar initializer [-Wbraced-scalar-init]
+  {                 // config
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+compiling metroTask.c...
+compiling stm32f1xx_hal_rtc_ex.c...
+compiling stm32f1xx_hal_rtc.c...
+compiling stm32f1xx_hal.c...
+../Metrology/drivers/src/metrology_hal.c(249): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+    if (Metro_HAL_Stpm_Read(in_Metro_Device_Id, STPM_DSPCTRL1, 1, (uint32_t*)&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1)==0)
+                                                ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(577): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+    Metro_HAL_Stpm_write(in_Metro_Device_Id,STPM_DSPCTRL1,2,&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                            ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(869): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+      Metro_HAL_Stpm_write(in_Metro_Device,STPM_DSPCTRL1,2,&p_Metro_Device_Config[in_Metro_Device].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                           ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(905): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+    Metro_HAL_Stpm_write(in_Metro_Device,STPM_DSPCTRL1,2,&p_Metro_Device_Config[in_Metro_Device].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                         ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(989): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+    Metro_HAL_Stpm_write(in_Metro_Device,STPM_DSPCTRL1,2,&p_Metro_Device_Config[in_Metro_Device].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                         ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(1162): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+    Metro_HAL_Stpm_write(in_Metro_Device_Id,STPM_DSPCTRL1,2,&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                            ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(1224): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+    Metro_HAL_Stpm_write(in_Metro_Device_Id,STPM_DSPCTRL1,2,&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                            ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(1261): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+     Metro_HAL_Stpm_write(in_Metro_Device_Id,STPM_DSPCTRL1,2,&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                             ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(1350): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+    Metro_HAL_Stpm_write(in_Metro_Device_Id,STPM_DSPCTRL1,2,&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                            ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(1532): warning: enumeration values 'APPARENT_VEC', 'MOM_WIDE_ACT', and 'MOM_FUND_ACT' not handled in switch [-Wswitch]
+    switch (in_Metro_Power_Selection)
+            ^~~~~~~~~~~~~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(1668): warning: enumeration values 'APPARENT_VEC', 'MOM_WIDE_ACT', and 'MOM_FUND_ACT' not handled in switch [-Wswitch]
+    switch (in_Metro_Power_Selection)
+            ^~~~~~~~~~~~~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(2148): warning: enumeration value 'NB_MAX_TYPE_NRJ' not handled in switch [-Wswitch]
+    switch (in_Metro_Energy_Selection)
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(2287): warning: enumeration values 'LIVE_EVENT_REFRESHED', 'LIVE_EVENT_WRONG_INSERTION', and 'LIVE_EVENT_CURRENT_TAMPER' not handled in switch [-Wswitch]
+    switch (in_Metro_Live_Event_requested)
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(2563): warning: enumeration value 'STATUS_REFRESHED' not handled in switch [-Wswitch]
+    switch (in_Metro_Status_requested)
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(2881): warning: enumeration value 'STATUS_REFRESHED' not handled in switch [-Wswitch]
+    switch (in_Metro_Status_requested)
+            ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(3576): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+     Metro_HAL_Stpm_write(in_Metro_Device_Id,STPM_DSPCTRL1,7,&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                             ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(3632): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+     Metro_HAL_Stpm_write(in_Metro_Device_Id,STPM_DSPCTRL1,7,&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                             ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(3690): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+      Metro_HAL_Stpm_write(in_Metro_Device_Id,STPM_DSPCTRL1,8,&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                              ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(3893): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+     Metro_HAL_Stpm_write(in_Metro_Device_Id,STPM_DSPCTRL1,2,&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                             ^~~~~~~~~~~~~
+../Metrology/drivers/src/metrology_hal.c(3948): warning: expression which evaluates to zero treated as a null pointer constant of type 'uint8_t *' (aka 'unsigned char *') [-Wnon-literal-null-conversion]
+    Metro_HAL_Stpm_write(in_Metro_Device_Id,STPM_DSPCTRL1,2,&p_Metro_Device_Config[in_Metro_Device_Id].metro_stpm_reg.DSPCTRL1,STPM_WAIT);
+                                            ^~~~~~~~~~~~~
+20 warnings generated.
+compiling metrology_hal.c...
+compiling stm32f1xx_hal_rcc.c...
+compiling stm32f1xx_hal_rcc_ex.c...
+compiling stm32f1xx_hal_cortex.c...
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_hal_dma.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_flash.c...
+compiling stm32f1xx_hal_flash_ex.c...
+compiling stm32f1xx_hal_spi_ex.c...
+compiling stm32f1xx_hal_tim_ex.c...
+compiling stm32f1xx_hal_spi.c...
+compiling stm32f1xx_hal_tim.c...
+compiling stm32f1xx_hal_uart.c...
+linking...
+Program Size: Code=14396 RO-data=504 RW-data=4 ZI-data=9492  
+FromELF: creating hex file...
+"stm32_stpm\stm32_stpm.axf" - 0 Error(s), 21 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.0.pack
+                Keil.STM32F1xx_DFP.2.4.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_stm32_stpm
+  C:/Users/Vytautas Daunoras/AppData/Local/Arm_1/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/Vytautas Daunoras/AppData/Local/Arm_1/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+Build Time Elapsed:  00:00:04
+</pre>
+</body>
+</html>
