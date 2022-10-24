@@ -120,6 +120,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	/**************** Measure application ************************/
+    if (metroData.metroTimerActive == 1)
+    {
+      HAL_GPIO_TogglePin(LED2_GPIO_type, LED2_GPIO_pin);
+      METRO_Latch_Measures();
+      METRO_Get_Measures();
+      METRO_Update_Measures();
+      metroData.metroTimerActive = 0;
+    }
+   /**************************************************************/ 
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */

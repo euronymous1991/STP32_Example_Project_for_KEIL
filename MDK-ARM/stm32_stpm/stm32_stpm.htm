@@ -3,11 +3,11 @@
 <title>Static Call Graph - [stm32_stpm\stm32_stpm.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image stm32_stpm\stm32_stpm.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Mon Oct 17 10:48:33 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Mon Oct 24 17:06:22 2022
 <BR><P>
 <H3>Maximum Stack Usage =        288 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-main &rArr; METRO_Init &rArr; Metro_ApplyConfig &rArr; Metrology_HAL_WriteBlock &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
+main &rArr; METRO_Latch_Measures &rArr; Metro_Set_Latch_device_type &rArr; Metro_HAL_Set_Latch_device_type &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 <P>
 <H3>
 Mutually Recursive functions
@@ -106,7 +106,7 @@ Global Symbols
 <P><STRONG><a name="[48]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xe.o(.text)
 </UL>
-<P><STRONG><a name="[92]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[a1]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[49]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -116,15 +116,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[93]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[a2]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[94]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[a3]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[95]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[a4]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[96]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[a5]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[97]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[a6]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f103xe.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xe.o(RESET)
@@ -371,20 +371,20 @@ Global Symbols
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[98]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[a7]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[99]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[a8]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[4b]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
-<P><STRONG><a name="[86]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
+<P><STRONG><a name="[91]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
 </UL>
 
-<P><STRONG><a name="[9a]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[a9]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[4d]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -396,7 +396,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[9b]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[aa]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[4f]"></a>HAL_Delay</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, stm32f1xx_hal.o(.text.HAL_Delay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_Delay
@@ -414,12 +414,17 @@ Global Symbols
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[83]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_STPM_SYN_reset_3_pulses
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_power_up_device
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_init_device
+<P><STRONG><a name="[a0]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(.text.HAL_GPIO_TogglePin))
+<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[8d]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
+<BR><BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_STPM_SYN_reset_3_pulses
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Set_Latch_device_type
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_power_up_device
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_init_device
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -435,7 +440,7 @@ Global Symbols
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 </UL>
 
-<P><STRONG><a name="[8c]"></a>HAL_IncTick</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f1xx_hal.o(.text.HAL_IncTick))
+<P><STRONG><a name="[9a]"></a>HAL_IncTick</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f1xx_hal.o(.text.HAL_IncTick))
 <BR><BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 
@@ -522,7 +527,7 @@ Global Symbols
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8d]"></a>HAL_RCC_GetPCLK1Freq</STRONG> (Thumb, 188 bytes, Stack size 0 bytes, stm32f1xx_hal_rcc.o(.text.HAL_RCC_GetPCLK1Freq))
+<P><STRONG><a name="[9b]"></a>HAL_RCC_GetPCLK1Freq</STRONG> (Thumb, 188 bytes, Stack size 0 bytes, stm32f1xx_hal_rcc.o(.text.HAL_RCC_GetPCLK1Freq))
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
 
@@ -583,7 +588,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_init_device
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_init_device
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -601,10 +606,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_SpiTxStart
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_SpiTxStart
 </UL>
 
-<P><STRONG><a name="[8e]"></a>HAL_SYSTICK_CLKSourceConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f1xx_hal_cortex.o(.text.HAL_SYSTICK_CLKSourceConfig))
+<P><STRONG><a name="[9c]"></a>HAL_SYSTICK_CLKSourceConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f1xx_hal_cortex.o(.text.HAL_SYSTICK_CLKSourceConfig))
 <BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -631,7 +636,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>
 
-<P><STRONG><a name="[90]"></a>HAL_TIMEx_MasterConfigSynchronization</STRONG> (Thumb, 70 bytes, Stack size 0 bytes, stm32f1xx_hal_tim_ex.o(.text.HAL_TIMEx_MasterConfigSynchronization))
+<P><STRONG><a name="[9e]"></a>HAL_TIMEx_MasterConfigSynchronization</STRONG> (Thumb, 70 bytes, Stack size 0 bytes, stm32f1xx_hal_tim_ex.o(.text.HAL_TIMEx_MasterConfigSynchronization))
 <BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -653,11 +658,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 </UL>
 
-<P><STRONG><a name="[91]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f1xx_hal_tim.o(.text.HAL_TIM_Base_Start_IT))
+<P><STRONG><a name="[9f]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f1xx_hal_tim.o(.text.HAL_TIM_Base_Start_IT))
 <BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8f]"></a>HAL_TIM_ConfigClockSource</STRONG> (Thumb, 456 bytes, Stack size 8 bytes, stm32f1xx_hal_tim.o(.text.HAL_TIM_ConfigClockSource))
+<P><STRONG><a name="[9d]"></a>HAL_TIM_ConfigClockSource</STRONG> (Thumb, 456 bytes, Stack size 8 bytes, stm32f1xx_hal_tim.o(.text.HAL_TIM_ConfigClockSource))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_TIM_ConfigClockSource
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -714,129 +719,231 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
 </UL>
 
-<P><STRONG><a name="[79]"></a>METRO_Init</STRONG> (Thumb, 172 bytes, Stack size 24 bytes, metrotask.o(.text.METRO_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = METRO_Init &rArr; Metro_ApplyConfig &rArr; Metrology_HAL_WriteBlock &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
+<P><STRONG><a name="[79]"></a>METRO_Get_Measures</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, metrotask.o(.text.METRO_Get_Measures))
+<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = METRO_Get_Measures &rArr; Metro_Get_Data_device &rArr; Metro_HAL_Get_Data_device &rArr; Metro_HAL_Stpm_Read &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Register_Latch_device_Config_type
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Set_Hardware_Factors
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_ApplyConfig
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Setup
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_power_up_device
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Init
+<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Get_Data_device
 </UL>
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7d]"></a>Metro_ApplyConfig</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, metrology.o(.text.Metro_ApplyConfig))
+<P><STRONG><a name="[7b]"></a>METRO_Init</STRONG> (Thumb, 172 bytes, Stack size 24 bytes, metrotask.o(.text.METRO_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = METRO_Init &rArr; Metro_ApplyConfig &rArr; Metrology_HAL_WriteBlock &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Register_Latch_device_Config_type
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Set_Hardware_Factors
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_ApplyConfig
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Setup
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_power_up_device
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[82]"></a>METRO_Latch_Measures</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, metrotask.o(.text.METRO_Latch_Measures))
+<BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = METRO_Latch_Measures &rArr; Metro_Set_Latch_device_type &rArr; Metro_HAL_Set_Latch_device_type &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Set_Latch_device_type
+</UL>
+<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[84]"></a>METRO_Update_Measures</STRONG> (Thumb, 112 bytes, Stack size 8 bytes, metrotask.o(.text.METRO_Update_Measures))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = METRO_Update_Measures &rArr; Metro_Read_RMS
+</UL>
+<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Read_RMS
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Read_energy
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Read_Power
+</UL>
+<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[7f]"></a>Metro_ApplyConfig</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, metrology.o(.text.Metro_ApplyConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = Metro_ApplyConfig &rArr; Metrology_HAL_WriteBlock &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metrology_HAL_ReadBlock
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metrology_HAL_WriteBlock
+<BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metrology_HAL_ReadBlock
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metrology_HAL_WriteBlock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
-</UL>
-
-<P><STRONG><a name="[8b]"></a>Metro_HAL_Setup</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, metrology_hal.o(.text.Metro_HAL_Setup))
-<BR><BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Setup
+<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
 </UL>
 
-<P><STRONG><a name="[85]"></a>Metro_HAL_Stpm_Read</STRONG> (Thumb, 650 bytes, Stack size 48 bytes, metrology_hal.o(.text.Metro_HAL_Stpm_Read))
+<P><STRONG><a name="[7a]"></a>Metro_Get_Data_device</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, metrology.o(.text.Metro_Get_Data_device))
+<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = Metro_Get_Data_device &rArr; Metro_HAL_Get_Data_device &rArr; Metro_HAL_Stpm_Read &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Get_Data_device
+</UL>
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Get_Measures
+</UL>
+
+<P><STRONG><a name="[8a]"></a>Metro_HAL_Get_Data_device</STRONG> (Thumb, 92 bytes, Stack size 24 bytes, metrology_hal.o(.text.Metro_HAL_Get_Data_device))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = Metro_HAL_Get_Data_device &rArr; Metro_HAL_Stpm_Read &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Get_Data_device
+</UL>
+
+<P><STRONG><a name="[8e]"></a>Metro_HAL_Set_Latch_device_type</STRONG> (Thumb, 456 bytes, Stack size 40 bytes, metrology_hal.o(.text.Metro_HAL_Set_Latch_device_type))
+<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = Metro_HAL_Set_Latch_device_type &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+</UL>
+<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Set_Latch_device_type
+</UL>
+
+<P><STRONG><a name="[99]"></a>Metro_HAL_Setup</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, metrology_hal.o(.text.Metro_HAL_Setup))
+<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Setup
+</UL>
+
+<P><STRONG><a name="[8b]"></a>Metro_HAL_Stpm_Read</STRONG> (Thumb, 650 bytes, Stack size 48 bytes, metrology_hal.o(.text.Metro_HAL_Stpm_Read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = Metro_HAL_Stpm_Read &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_SpiTxStart
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_CalcCRC8
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_SpiTxStart
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_CalcCRC8
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metrology_HAL_ReadBlock
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_init_device
+<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Get_Data_device
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metrology_HAL_ReadBlock
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_init_device
 </UL>
 
-<P><STRONG><a name="[88]"></a>Metro_HAL_Stpm_write</STRONG> (Thumb, 484 bytes, Stack size 56 bytes, metrology_hal.o(.text.Metro_HAL_Stpm_write))
+<P><STRONG><a name="[8f]"></a>Metro_HAL_Stpm_write</STRONG> (Thumb, 484 bytes, Stack size 56 bytes, metrology_hal.o(.text.Metro_HAL_Stpm_write))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_SpiTxStart
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_CalcCRC8
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_SpiTxStart
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_CalcCRC8
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metrology_HAL_WriteBlock
+<BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Set_Latch_device_type
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metrology_HAL_WriteBlock
 </UL>
 
-<P><STRONG><a name="[89]"></a>Metro_HAL_init_device</STRONG> (Thumb, 866 bytes, Stack size 32 bytes, metrology_hal.o(.text.Metro_HAL_init_device))
+<P><STRONG><a name="[93]"></a>Metro_HAL_init_device</STRONG> (Thumb, 866 bytes, Stack size 32 bytes, metrology_hal.o(.text.Metro_HAL_init_device))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = Metro_HAL_init_device &rArr; Metro_HAL_Stpm_Read &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_STPM_SYN_reset_3_pulses
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_STPM_SYN_reset_3_pulses
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Init
+<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Init
 </UL>
 
-<P><STRONG><a name="[8a]"></a>Metro_HAL_power_up_device</STRONG> (Thumb, 514 bytes, Stack size 32 bytes, metrology_hal.o(.text.Metro_HAL_power_up_device))
+<P><STRONG><a name="[94]"></a>Metro_HAL_power_up_device</STRONG> (Thumb, 514 bytes, Stack size 32 bytes, metrology_hal.o(.text.Metro_HAL_power_up_device))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Metro_HAL_power_up_device
 </UL>
-<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_power_up_device
+<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_power_up_device
 </UL>
 
-<P><STRONG><a name="[7c]"></a>Metro_Init</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, metrology.o(.text.Metro_Init))
+<P><STRONG><a name="[97]"></a>Metro_HAL_read_RMS_Current</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, metrology_hal.o(.text.Metro_HAL_read_RMS_Current))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Read_RMS
+</UL>
+
+<P><STRONG><a name="[96]"></a>Metro_HAL_read_RMS_Voltage</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, metrology_hal.o(.text.Metro_HAL_read_RMS_Voltage))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Read_RMS
+</UL>
+
+<P><STRONG><a name="[98]"></a>Metro_HAL_read_energy</STRONG> (Thumb, 252 bytes, Stack size 0 bytes, metrology_hal.o(.text.Metro_HAL_read_energy))
+<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Read_energy
+</UL>
+
+<P><STRONG><a name="[95]"></a>Metro_HAL_read_power</STRONG> (Thumb, 428 bytes, Stack size 0 bytes, metrology_hal.o(.text.Metro_HAL_read_power))
+<BR><BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_Read_Power
+</UL>
+
+<P><STRONG><a name="[7e]"></a>Metro_Init</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, metrology.o(.text.Metro_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = Metro_Init &rArr; Metro_HAL_init_device &rArr; Metro_HAL_Stpm_Read &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_init_device
+<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_init_device
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
-</UL>
-
-<P><STRONG><a name="[7f]"></a>Metro_Register_Latch_device_Config_type</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, metrology.o(.text.Metro_Register_Latch_device_Config_type))
-<BR><BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
+<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
 </UL>
 
-<P><STRONG><a name="[7e]"></a>Metro_Set_Hardware_Factors</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, metrology.o(.text.Metro_Set_Hardware_Factors))
+<P><STRONG><a name="[86]"></a>Metro_Read_Power</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, metrology.o(.text.Metro_Read_Power))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Metro_Read_Power
+</UL>
+<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_read_power
+</UL>
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Update_Measures
+</UL>
+
+<P><STRONG><a name="[87]"></a>Metro_Read_RMS</STRONG> (Thumb, 146 bytes, Stack size 24 bytes, metrology.o(.text.Metro_Read_RMS))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Metro_Read_RMS
+</UL>
+<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_read_RMS_Current
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_read_RMS_Voltage
+</UL>
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Update_Measures
+</UL>
+
+<P><STRONG><a name="[85]"></a>Metro_Read_energy</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, metrology.o(.text.Metro_Read_energy))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Metro_Read_energy
+</UL>
+<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_read_energy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Update_Measures
+</UL>
+
+<P><STRONG><a name="[81]"></a>Metro_Register_Latch_device_Config_type</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, metrology.o(.text.Metro_Register_Latch_device_Config_type))
+<BR><BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
+</UL>
+
+<P><STRONG><a name="[80]"></a>Metro_Set_Hardware_Factors</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, metrology.o(.text.Metro_Set_Hardware_Factors))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Metro_Set_Hardware_Factors
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
+<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
 </UL>
 
-<P><STRONG><a name="[7a]"></a>Metro_Setup</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, metrology.o(.text.Metro_Setup))
+<P><STRONG><a name="[83]"></a>Metro_Set_Latch_device_type</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, metrology.o(.text.Metro_Set_Latch_device_type))
+<BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = Metro_Set_Latch_device_type &rArr; Metro_HAL_Set_Latch_device_type &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Set_Latch_device_type
+</UL>
+<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Latch_Measures
+</UL>
+
+<P><STRONG><a name="[7c]"></a>Metro_Setup</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, metrology.o(.text.Metro_Setup))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Metro_Setup
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Setup
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Setup
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
+<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
 </UL>
 
-<P><STRONG><a name="[7b]"></a>Metro_power_up_device</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, metrology.o(.text.Metro_power_up_device))
+<P><STRONG><a name="[7d]"></a>Metro_power_up_device</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, metrology.o(.text.Metro_power_up_device))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Metro_power_up_device &rArr; Metro_HAL_power_up_device
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_power_up_device
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_power_up_device
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
+<BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
 </UL>
 
-<P><STRONG><a name="[81]"></a>Metrology_HAL_ReadBlock</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, metrology_hal.o(.text.Metrology_HAL_ReadBlock))
+<P><STRONG><a name="[89]"></a>Metrology_HAL_ReadBlock</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, metrology_hal.o(.text.Metrology_HAL_ReadBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = Metrology_HAL_ReadBlock &rArr; Metro_HAL_Stpm_Read &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
+<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_ApplyConfig
+<BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_ApplyConfig
 </UL>
 
-<P><STRONG><a name="[80]"></a>Metrology_HAL_WriteBlock</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, metrology_hal.o(.text.Metrology_HAL_WriteBlock))
+<P><STRONG><a name="[88]"></a>Metrology_HAL_WriteBlock</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, metrology_hal.o(.text.Metrology_HAL_WriteBlock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = Metrology_HAL_WriteBlock &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
+<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_ApplyConfig
+<BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_ApplyConfig
 </UL>
 
 <P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, stm32f1xx_it.o(.text.SysTick_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SysTick_Handler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_IRQHandler
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xe.o(RESET)
 </UL>
@@ -856,23 +963,27 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 </UL>
 
-<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 638 bytes, Stack size 88 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = main &rArr; METRO_Init &rArr; Metro_ApplyConfig &rArr; Metrology_HAL_WriteBlock &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
+<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 670 bytes, Stack size 88 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = main &rArr; METRO_Latch_Measures &rArr; Metro_Set_Latch_device_type &rArr; Metro_HAL_Set_Latch_device_type &rArr; Metro_HAL_Stpm_write &rArr; Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Update_Measures
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Get_Measures
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Latch_Measures
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;METRO_Init
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RTC_SetDate
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RTC_SetTime
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RTC_Init
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ConfigClockSource
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ConfigClockSource
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_CLKSourceConfig
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_CLKSourceConfig
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
@@ -882,37 +993,37 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[9c]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[ab]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[9d]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[ac]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[9e]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[ad]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 <P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[87]"></a>Metro_HAL_CalcCRC8</STRONG> (Thumb, 562 bytes, Stack size 8 bytes, metrology_hal.o(.text.Metro_HAL_CalcCRC8))
+<P><STRONG><a name="[92]"></a>Metro_HAL_CalcCRC8</STRONG> (Thumb, 562 bytes, Stack size 8 bytes, metrology_hal.o(.text.Metro_HAL_CalcCRC8))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Metro_HAL_CalcCRC8
 </UL>
-<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
+<BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
 </UL>
 
-<P><STRONG><a name="[84]"></a>Metro_HAL_SpiTxStart</STRONG> (Thumb, 428 bytes, Stack size 48 bytes, metrology_hal.o(.text.Metro_HAL_SpiTxStart))
+<P><STRONG><a name="[90]"></a>Metro_HAL_SpiTxStart</STRONG> (Thumb, 428 bytes, Stack size 48 bytes, metrology_hal.o(.text.Metro_HAL_SpiTxStart))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = Metro_HAL_SpiTxStart &rArr; HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
 </UL>
-<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
+<BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_write
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_Stpm_Read
 </UL>
 
-<P><STRONG><a name="[82]"></a>Metro_HAL_STPM_SYN_reset_3_pulses</STRONG> (Thumb, 604 bytes, Stack size 32 bytes, metrology_hal.o(.text.Metro_HAL_STPM_SYN_reset_3_pulses))
+<P><STRONG><a name="[8c]"></a>Metro_HAL_STPM_SYN_reset_3_pulses</STRONG> (Thumb, 604 bytes, Stack size 32 bytes, metrology_hal.o(.text.Metro_HAL_STPM_SYN_reset_3_pulses))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Metro_HAL_STPM_SYN_reset_3_pulses
 </UL>
-<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_init_device
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Metro_HAL_init_device
 </UL>
 
 <P><STRONG><a name="[67]"></a>SPI_WaitOnFlagUntilTimeout</STRONG> (Thumb, 234 bytes, Stack size 24 bytes, stm32f1xx_hal_spi.o(.text.SPI_WaitOnFlagUntilTimeout))
@@ -927,7 +1038,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UART_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
 </UL>
